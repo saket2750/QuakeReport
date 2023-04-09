@@ -3,9 +3,9 @@ package com.android.customadapter;
 public class QuakeReport {
     private float magnitude;
     private String state;
-    private String dateTime;
+    private long dateTime;
 
-    public QuakeReport(float magnitude, String state, String dateTime){
+    public QuakeReport(float magnitude, String state, long dateTime){
         this.magnitude = magnitude;
         this.state = state;
         this.dateTime = dateTime;
@@ -19,7 +19,7 @@ public class QuakeReport {
         return state;
     }
 
-    public String getDateTime(){
+    public long getDateTime(){
         return dateTime;
     }
 

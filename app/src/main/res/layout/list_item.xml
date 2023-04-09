@@ -17,12 +17,19 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:id="@+id/state_textView"
-        tools:text="SanFrancisco"/>
+        tools:text="San Francisco"/>
     <TextView
+        android:id="@+id/date"
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:id="@+id/dateTime_textView"
-        tools:text="31st Jan 2022"/>
+        android:layout_weight="1"
+        tools:text="Mar 6, 2010" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00 PM" />
 
 </LinearLayout>
