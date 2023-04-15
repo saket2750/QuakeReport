@@ -1,17 +1,19 @@
 package com.android.customadapter;
 
 public class QuakeReport {
-    private float magnitude;
-    private String state;
-    private long dateTime;
+    private final double magnitude;
+    private final String state;
+    private final long dateTime;
+    private final String url;
 
-    public QuakeReport(float magnitude, String state, long dateTime){
+    public QuakeReport(double magnitude, String state, long dateTime, String url){
         this.magnitude = magnitude;
         this.state = state;
         this.dateTime = dateTime;
+        this.url = url;
     }
 
-    public float getMagnitude(){
+    public double getMagnitude(){
         return magnitude;
     }
 
@@ -23,4 +25,7 @@ public class QuakeReport {
         return dateTime;
     }
 
+    public String getUrl(){
+        return url;
+    }
 }

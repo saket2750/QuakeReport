@@ -7,29 +7,71 @@
     android:padding="16dp">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="36dp"
         android:id="@+id/magnitude_textView"
-        android:layout_height="wrap_content"
+        android:background="@drawable/magnitude_circle"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
         tools:text="6.2"/>
-    <TextView
+    <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:id="@+id/state_textView"
+        android:layout_weight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationOffset"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textColor="@color/textColorEarthquakeDetails"
+        android:textSize="12sp"
+        android:ellipsize="end"
         tools:text="San Francisco"/>
     <TextView
-        android:id="@+id/date"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:textColor="@color/textColorEarthquakeLocation"
+        android:id="@+id/primaryLocation"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        tools:text="San Francisco"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:ellipsize="end"
+        android:textColor="@color/textColorEarthquakeDetails"
+        android:textSize="12sp"
         tools:text="Mar 6, 2010" />
 
     <TextView
         android:id="@+id/time"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/textColorEarthquakeLocation"
+        android:textSize="16sp"
         tools:text="3:00 PM" />
-
+    </LinearLayout>
 </LinearLayout>

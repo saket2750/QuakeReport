@@ -2,7 +2,11 @@ package com.android.quakereport;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,7 +26,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         ArrayList<QuakeReport> earthquakes = QueryUtil.extractEarthquakes();
 
         // Find a reference to the {@link ListView} in the layout
-        ListView earthquakeListView = (ListView) findViewById(R.id.list);
+        ListView earthquakeListView = findViewById(R.id.list);
 
         // Create a new {@link ArrayAdapter} of earthquakes
         CustomArrayAdapter adapter = new CustomArrayAdapter(
@@ -31,5 +35,12 @@ public class EarthquakeActivity extends AppCompatActivity {
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
         earthquakeListView.setAdapter(adapter);
+
+        earthquakeListView.setOnItemClickListener((adapterView, view, position, l) -> {
+            QuakeReport report = adapter.getItem(position);
+            Uri earthQuakeUri = Uri.parse(report.getUrl());
+            Intent webIntent = new Intent(Intent.ACTION_VIEW, earthQuakeUri);
+            startActivity(webIntent);
+        });
     }
 }
